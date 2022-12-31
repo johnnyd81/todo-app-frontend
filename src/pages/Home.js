@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     //the useEffect hook fetches data on mount if the user is authenticated
     const fetchTodos = async () => {
-      const response = await fetch("/api/todos", {
+      const response = await fetch("https://todo-app-backend-19ql.onrender.com/api/todos", {
         headers: {
           Authorization: `Bearer ${user.token}`, //Authorization checks that a user has a valid token to access data in the database
         },
@@ -41,7 +41,7 @@ const Home = () => {
 
     const newTodo = { description };
 
-    const response = await fetch("/api/todos/add", {
+    const response = await fetch("https://todo-app-backend-19ql.onrender.com/api/todos/add", {
       method: "POST",
       body: JSON.stringify(newTodo),
       headers: {

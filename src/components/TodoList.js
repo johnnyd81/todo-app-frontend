@@ -13,12 +13,15 @@ const TodoList = ({ todo, setError }) => {
       return;
     }
 
-    const response = await fetch("/api/todos/" + todo._id, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${user.token}`, //the header has to have a valid token or the user cannot delete a todo
-      },
-    });
+    const response = await fetch(
+      "https://todo-app-backend-19ql.onrender.com/api/todos/" + todo._id,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${user.token}`, //the header has to have a valid token or the user cannot delete a todo
+        },
+      }
+    );
 
     const json = await response.json();
 

@@ -10,7 +10,7 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("/api/users/login", {
+    const response = await fetch("https://todo-app-backend-19ql.onrender.com/api/users/login", {
       //when a user logs in the request hits this endpoint as a post request
       method: "POST",
       body: JSON.stringify({ username, password }),
